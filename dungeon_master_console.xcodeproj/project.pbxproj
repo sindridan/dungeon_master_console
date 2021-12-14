@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2168E6012760EC4500D89251 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2168E6002760EC4500D89251 /* main.cpp */; };
+		21D1AFE42768BD9600164D72 /* opening_welcome_message.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21D1AFE22768BD9600164D72 /* opening_welcome_message.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +24,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2168E5FD2760EC4500D89251 /* Galdur */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Galdur; sourceTree = BUILT_PRODUCTS_DIR; };
+		2168E5FD2760EC4500D89251 /* dungeon_master_console */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = dungeon_master_console; sourceTree = BUILT_PRODUCTS_DIR; };
 		2168E6002760EC4500D89251 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		21D1AFE22768BD9600164D72 /* opening_welcome_message.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = opening_welcome_message.cpp; sourceTree = "<group>"; };
+		21D1AFE32768BD9600164D72 /* opening_welcome_message.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = opening_welcome_message.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +44,7 @@
 		2168E5F42760EC4400D89251 = {
 			isa = PBXGroup;
 			children = (
-				2168E5FF2760EC4500D89251 /* Galdur */,
+				2168E5FF2760EC4500D89251 /* main */,
 				2168E5FE2760EC4500D89251 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,25 +52,99 @@
 		2168E5FE2760EC4500D89251 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2168E5FD2760EC4500D89251 /* Galdur */,
+				2168E5FD2760EC4500D89251 /* dungeon_master_console */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2168E5FF2760EC4500D89251 /* Galdur */ = {
+		2168E5FF2760EC4500D89251 /* main */ = {
 			isa = PBXGroup;
 			children = (
+				21D1AFD5276815AB00164D72 /* data_layer */,
+				21D1AFD4276815A300164D72 /* user_interface */,
+				21D1AFD32768159900164D72 /* mechanics */,
 				2168E6002760EC4500D89251 /* main.cpp */,
 			);
-			path = Galdur;
+			path = main;
+			sourceTree = "<group>";
+		};
+		21D1AFD32768159900164D72 /* mechanics */ = {
+			isa = PBXGroup;
+			children = (
+				21D1AFDC27683DF600164D72 /* dice_calculator */,
+				21D1AFDA27683B0400164D72 /* dice_input_parser */,
+			);
+			path = mechanics;
+			sourceTree = "<group>";
+		};
+		21D1AFD4276815A300164D72 /* user_interface */ = {
+			isa = PBXGroup;
+			children = (
+				21D1AFE02768BD4C00164D72 /* standard_messages */,
+				21D1AFDE27683E3F00164D72 /* dice_main_menu */,
+			);
+			path = user_interface;
+			sourceTree = "<group>";
+		};
+		21D1AFD5276815AB00164D72 /* data_layer */ = {
+			isa = PBXGroup;
+			children = (
+				21D1AFDB27683B2200164D72 /* dice_throws */,
+			);
+			path = data_layer;
+			sourceTree = "<group>";
+		};
+		21D1AFDA27683B0400164D72 /* dice_input_parser */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = dice_input_parser;
+			sourceTree = "<group>";
+		};
+		21D1AFDB27683B2200164D72 /* dice_throws */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = dice_throws;
+			sourceTree = "<group>";
+		};
+		21D1AFDC27683DF600164D72 /* dice_calculator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = dice_calculator;
+			sourceTree = "<group>";
+		};
+		21D1AFDE27683E3F00164D72 /* dice_main_menu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = dice_main_menu;
+			sourceTree = "<group>";
+		};
+		21D1AFE02768BD4C00164D72 /* standard_messages */ = {
+			isa = PBXGroup;
+			children = (
+				21D1AFE12768BD5F00164D72 /* opening_messages */,
+			);
+			path = standard_messages;
+			sourceTree = "<group>";
+		};
+		21D1AFE12768BD5F00164D72 /* opening_messages */ = {
+			isa = PBXGroup;
+			children = (
+				21D1AFE22768BD9600164D72 /* opening_welcome_message.cpp */,
+				21D1AFE32768BD9600164D72 /* opening_welcome_message.hpp */,
+			);
+			path = opening_messages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2168E5FC2760EC4500D89251 /* Galdur */ = {
+		2168E5FC2760EC4500D89251 /* dungeon_master_console */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2168E6042760EC4500D89251 /* Build configuration list for PBXNativeTarget "Galdur" */;
+			buildConfigurationList = 2168E6042760EC4500D89251 /* Build configuration list for PBXNativeTarget "dungeon_master_console" */;
 			buildPhases = (
 				2168E5F92760EC4500D89251 /* Sources */,
 				2168E5FA2760EC4500D89251 /* Frameworks */,
@@ -77,9 +154,9 @@
 			);
 			dependencies = (
 			);
-			name = Galdur;
+			name = dungeon_master_console;
 			productName = Galdur;
-			productReference = 2168E5FD2760EC4500D89251 /* Galdur */;
+			productReference = 2168E5FD2760EC4500D89251 /* dungeon_master_console */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -95,7 +172,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2168E5F82760EC4400D89251 /* Build configuration list for PBXProject "Galdur" */;
+			buildConfigurationList = 2168E5F82760EC4400D89251 /* Build configuration list for PBXProject "dungeon_master_console" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -108,7 +185,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2168E5FC2760EC4500D89251 /* Galdur */,
+				2168E5FC2760EC4500D89251 /* dungeon_master_console */,
 			);
 		};
 /* End PBXProject section */
@@ -119,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2168E6012760EC4500D89251 /* main.cpp in Sources */,
+				21D1AFE42768BD9600164D72 /* opening_welcome_message.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +333,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2168E5F82760EC4400D89251 /* Build configuration list for PBXProject "Galdur" */ = {
+		2168E5F82760EC4400D89251 /* Build configuration list for PBXProject "dungeon_master_console" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2168E6022760EC4500D89251 /* Debug */,
@@ -264,7 +342,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2168E6042760EC4500D89251 /* Build configuration list for PBXNativeTarget "Galdur" */ = {
+		2168E6042760EC4500D89251 /* Build configuration list for PBXNativeTarget "dungeon_master_console" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2168E6052760EC4500D89251 /* Debug */,
