@@ -9,5 +9,11 @@
 #define dice_calculator_hpp
 
 #include <stdio.h>
+#include<iostream>
+#include <string.h>
+
+using namespace std; // does this not belong in the data layer? this should be a calc function which uses the Die function?
 
 #endif /* dice_calculator_hpp */
+
+
