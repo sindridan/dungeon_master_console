@@ -1,8 +1,8 @@
 //
 //  main.cpp
-//  Galdur
 //
 //  The purpose of this program is to simplify the DMs life when playing DnD
+//  Project Goblin Shell
 //
 //  Created by Sindri Dan Garðarsson on 8.12.2021.
 //

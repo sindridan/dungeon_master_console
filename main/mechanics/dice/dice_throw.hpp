@@ -9,9 +9,15 @@
 #define dice_throw_hpp
 
 #include <stdio.h>
-#include<iostream>
+#include <iostream>
 #include <string.h>
+#include "dice_form.hpp"
+#include <vector>
 
-using namespace std; // classes like these belong in the mechanics layer!
-
+using namespace std; 
+    vector<Die> start_dice(int dice_amount);
+    int total_dice_result(vector<Die> &dice);
+    bool dice_stage;
+    
+//TODO class for dice statistics? Median, medium, lowest, highest
 #endif /* dice_throw_hpp */
