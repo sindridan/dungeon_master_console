@@ -15,9 +15,9 @@
 #include <vector>
 
 using namespace std; 
-    vector<Die> start_dice(int dice_amount);
+    vector<Die> start_dice(int dice_amount, int faces);
     int total_dice_result(vector<Die> &dice);
-    bool dice_stage;
+
     
 //TODO class for dice statistics? Median, medium, lowest, highest
 #endif /* dice_throw_hpp */
