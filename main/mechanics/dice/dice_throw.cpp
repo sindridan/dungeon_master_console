@@ -21,7 +21,7 @@ vector<Die> start_dice(int dice_amount, int faces)
         throw "Dice faces input is invalid";
     }
     
-    vector<Die> dice; //init a new dice set, this only takes in fixed face, no variety of faces yet
+    vector<Die> dices; //init a new dice set, this only takes in fixed face, no variety of faces yet
     
     for(int i = 0; i < dice_amount; i++)
         {
@@ -29,7 +29,7 @@ vector<Die> start_dice(int dice_amount, int faces)
             random_dice_digit = rand() % faces + 1;
             Die temp_die("D" + to_string(faces), faces, random_dice_digit);
             
-            dice.push_back(temp_die);
+            dices.push_back(temp_die);
             cout << "Dice #" << to_string(i+1) + ": " << temp_die.get_dice_throw() << endl; // búa til child klasa með kastinu sem param
             
             //total_dice_throw += random_dice_digit;
@@ -40,7 +40,7 @@ vector<Die> start_dice(int dice_amount, int faces)
     //std::accumulate (begin(dice), end(dice), 0, [](int i, const Die& die){ return die.get_dice_throw() + i; });
 
 
-    return dice;
+    return dices;
 }
 
 int dice_result(vector<Die> &dice)

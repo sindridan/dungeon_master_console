@@ -35,7 +35,31 @@ int main(int argc, const char * argv[]) {
     while (keep_throwing_dice == true)
         {
             try {
-                start_dice(0, 0);
+                start_dice(4,6);
+            } catch (const char* msg) {
+              cerr << msg << endl;
+            }
+            
+            try {
+                start_dice(1,0);
+            } catch (const char* msg) {
+              cerr << msg << endl;
+            }
+            
+            try {
+                start_dice(10,10);
+            } catch (const char* msg) {
+              cerr << msg << endl;
+            }
+            try {
+                int amount = 0; int faces = 0;
+                cout << "input amount and then faces" << endl;
+                cin >> amount;
+                cin >> faces;
+                vector<Die> dice = start_dice(amount, faces);
+                //cout << "size of dice: " << dice.size();
+                int ttl = dice_result(dice);
+                cout << ttl << endl;
             } catch (const char* msg) {
               cerr << msg << endl;
             }
