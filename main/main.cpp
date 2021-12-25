@@ -15,6 +15,7 @@
 #include "user_interface/standard_messages/opening_messages/opening_welcome_message.hpp"
 #include "mechanics/dice/dice_form.hpp"
 #include "mechanics/dice/dice_throw.hpp"
+#include "user_interface/dice_main_menu/selecting_dice_format.hpp"
 
 using namespace std;
 int main(int argc, const char * argv[]) {
@@ -33,86 +34,32 @@ int main(int argc, const char * argv[]) {
     // init dice vars
     bool keep_throwing_dice = true;
     while (keep_throwing_dice == true)
-        {
-            try {
-                start_dice(4,6);
-            } catch (const char* msg) {
-              cerr << msg << endl;
-            }
+    {
             
-            try {
-                start_dice(1,0);
-            } catch (const char* msg) {
-              cerr << msg << endl;
-            }
-            
-            try {
-                start_dice(10,10);
-            } catch (const char* msg) {
-              cerr << msg << endl;
-            }
-            try {
-                int amount = 0; int faces = 0;
-                cout << "input amount and then faces" << endl;
-                cin >> amount;
-                cin >> faces;
-                vector<Die> dice = start_dice(amount, faces);
-                //cout << "size of dice: " << dice.size();
-                int ttl = dice_result(dice);
-                cout << ttl << endl;
-            } catch (const char* msg) {
-              cerr << msg << endl;
-            }
-    //        int dice_amount = 0;
-    //        int dice_type = 0;
-    //        int random_dice_digit = 0;
-    //        int dice_throw_total = 0;
-    //        // create temporary instances of dice to throw
-    //        vector<Die> dice;
-    //
-    //
-    //        cout << "How many dice? ";
-    //        cin >> dice_amount;
-    //
-    //        cout << "Enter dice face: ";
-    //        cin >> dice_type;
-    //
-    //
-    //        for(int i = 0; i < dice_amount; i++)
-    //            {
-    //                random_dice_digit = rand() % dice_type + 1;
-    //                Die temp_die("D" + to_string(dice_type), dice_type, random_dice_digit);
-    //
-    //                dice.push_back(temp_die);
-    //                cout << "Dice #" << to_string(i+1) + ": " << temp_die.get_dice_throw() << endl; // búa til child klasa með kastinu sem param
-    //
-    //                //total_dice_throw += random_dice_digit;
-    //            }
-    //
-        // results of total dices thrown
-        //int sum_of_elems = std::accumulate(dice.dice_throw.begin(), dice.dice_throw.end(), 0);
-        //std::accumulate (begin(dice), end(dice), 0, [](int i, const Die& die){ return die.get_dice_throw() + i; });
+        dice_input();
+        
 
-    //        for (int i = 0; i < dice.size(); i++)
-    //        {
-    //            dice_throw_total += dice[i].get_dice_throw();
-    //        }
-    //
-    //        cout << "Result: " << to_string(dice_throw_total) << endl;
-        //cout << endl;
-        
-        string cont_interaction = "";
-        cout << "Throw more dice (Y/N)";
-        cin >> cont_interaction;
-        if(cont_interaction == "N" || cont_interaction == "n")
+        bool valid_cont_interaction = false;
+        while(!valid_cont_interaction)
         {
-            keep_throwing_dice = false;
+            string cont_interaction = "";
+            cout << "Throw more dice (Y/N): ";
+            cin >> cont_interaction;
+            if(cont_interaction == "N" || cont_interaction == "n")
+            {
+                valid_cont_interaction = true;
+                keep_throwing_dice = false;
+            }
+            else if (cont_interaction == "Y" || cont_interaction == "y")
+            {
+                valid_cont_interaction = true;
+                cout << "More dice, yay!" << endl;
+            }
+            else {
+                cout << cont_interaction << " is not valid, only Y/N" << endl;
+                
+            }
         }
-        else if (cont_interaction == "Y" || cont_interaction == "y")
-        {
-            cout << "More dice, yay!" << endl;
-        }
-        
     }
     
     

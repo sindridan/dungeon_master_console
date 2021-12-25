@@ -12,6 +12,7 @@
 		21D1AFE72768E5A200164D72 /* dice_calculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21D1AFE52768E5A200164D72 /* dice_calculator.cpp */; };
 		21D1AFEB276900A000164D72 /* dice_form.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21D1AFE9276900A000164D72 /* dice_form.cpp */; };
 		21D1AFEE27694FDD00164D72 /* dice_throw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21D1AFEC27694FDD00164D72 /* dice_throw.cpp */; };
+		21D1AFF12776287300164D72 /* selecting_dice_format.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21D1AFEF2776287300164D72 /* selecting_dice_format.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,8 @@
 		21D1AFEA276900A000164D72 /* dice_form.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = dice_form.hpp; sourceTree = "<group>"; };
 		21D1AFEC27694FDD00164D72 /* dice_throw.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = dice_throw.cpp; sourceTree = "<group>"; };
 		21D1AFED27694FDD00164D72 /* dice_throw.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = dice_throw.hpp; sourceTree = "<group>"; };
+		21D1AFEF2776287300164D72 /* selecting_dice_format.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = selecting_dice_format.cpp; sourceTree = "<group>"; };
+		21D1AFF02776287300164D72 /* selecting_dice_format.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = selecting_dice_format.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,8 @@
 		21D1AFDE27683E3F00164D72 /* dice_main_menu */ = {
 			isa = PBXGroup;
 			children = (
+				21D1AFEF2776287300164D72 /* selecting_dice_format.cpp */,
+				21D1AFF02776287300164D72 /* selecting_dice_format.hpp */,
 			);
 			path = dice_main_menu;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 			files = (
 				2168E6012760EC4500D89251 /* main.cpp in Sources */,
 				21D1AFEE27694FDD00164D72 /* dice_throw.cpp in Sources */,
+				21D1AFF12776287300164D72 /* selecting_dice_format.cpp in Sources */,
 				21D1AFE72768E5A200164D72 /* dice_calculator.cpp in Sources */,
 				21D1AFEB276900A000164D72 /* dice_form.cpp in Sources */,
 				21D1AFE42768BD9600164D72 /* opening_welcome_message.cpp in Sources */,

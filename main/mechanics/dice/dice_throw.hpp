@@ -14,7 +14,7 @@
 #include "dice_form.hpp"
 #include <vector>
 
-using namespace std; 
+using namespace std;
     vector<Die> start_dice(int dice_amount, int faces);
     int dice_result(vector<Die> &dice);
 

@@ -11,15 +11,7 @@ vector<Die> start_dice(int dice_amount, int faces)
 {
     // Try/Catch handling here: https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm
     
-    if(dice_amount == 0 || dice_amount < 0)
-    {
-        throw "Dice amount input is invalid";
-    }
-    
-    if(faces == 0 || faces < 0)
-    {
-        throw "Dice faces input is invalid";
-    }
+
     
     vector<Die> dices; //init a new dice set, this only takes in fixed face, no variety of faces yet
     
