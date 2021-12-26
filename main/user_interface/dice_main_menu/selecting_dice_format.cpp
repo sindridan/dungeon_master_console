@@ -14,32 +14,32 @@ int* get_dice_input() // TODO: Simple validation like this is OK in UI layer I b
     dice_array[0] = 0;
     dice_array[1] = 0;
     
-    bool valid_amount = false;
-    bool valid_faces = false;
+    int amount = 0;
+    int faces = 0;
     
-    while (!valid_amount && !valid_faces) {
-        int amount = 0;
-        int faces = 0;
-        
-        cout << "Amount of dice: " << endl;
+    cout << "Amount of dice: " << endl;
+    cin >> amount;
+    //While the input entered is not an integer, prompt the user to enter an integer.
+    while(!cin || amount <= 0) // TODO: replace other block with this code, much better
+    {
+        cout << "Please enter a valid integer higher than 0: ";
+        cin.clear();
+        cin.ignore(10000, '\n');
         cin >> amount;
-        // TODO: try catch with a break if failed in a while loop?
-        if(amount > 0 || amount != int(amount)) // is this check useless? could just use cin.fail()
-        {
-            valid_amount = true;
-            dice_array[0] = amount;
-        }
-        
-        cout << "Amount of faces: " << endl;
-        cin >> faces;
-        // TODO: try catch with a break if failed in a while loop?
-        if(faces > 0 || faces != int(faces)) // is this check useless? could just use cin.fail()
-        {
-            valid_faces = true;
-            dice_array[1] = faces;
-        }
-
     }
+    dice_array[0] = amount;
+    
+    cout << "Faces on dice: " << endl;
+    cin >> faces;
+    //While the input entered is not an integer, prompt the user to enter an integer.
+    while(!cin || faces <= 0) // TODO: replace other block with this code, much better
+    {
+        cout << "Please enter a valid integer higher than 0: ";
+        cin.clear();
+        cin.ignore(10000, '\n');
+        cin >> faces;
+    }
+    dice_array[1] = faces;
 
     return dice_array;
 }
