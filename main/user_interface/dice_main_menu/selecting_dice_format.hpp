@@ -17,6 +17,7 @@
 #include <array>
 
 using namespace std;
+    int input_manager();
     int* get_dice_input();
     void dice_input ();
     

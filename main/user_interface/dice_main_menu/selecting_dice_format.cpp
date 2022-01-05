@@ -7,6 +7,22 @@
 
 #include "selecting_dice_format.hpp"
 
+int input_manager()
+{
+    int value = 0;
+    
+    cin >> value;
+    //While the input entered is not an integer, prompt the user to enter an integer.
+    while(!cin || value <= 0) // TODO: replace other block with this code, much better
+    {
+        cout << "Please enter a valid integer higher than 0: ";
+        cin.clear();
+        cin.ignore(10000, '\n');
+        cin >> value;
+    }
+    return value;
+}
+
 // this func returns an array of 2 numbers
 int* get_dice_input() // TODO: Simple validation like this is OK in UI layer I believe. Minimize this code block.
 {
@@ -14,32 +30,12 @@ int* get_dice_input() // TODO: Simple validation like this is OK in UI layer I b
     dice_array[0] = 0;
     dice_array[1] = 0;
     
-    int amount = 0;
-    int faces = 0;
     
     cout << "Amount of dice: " << endl;
-    cin >> amount;
-    //While the input entered is not an integer, prompt the user to enter an integer.
-    while(!cin || amount <= 0) // TODO: replace other block with this code, much better
-    {
-        cout << "Please enter a valid integer higher than 0: ";
-        cin.clear();
-        cin.ignore(10000, '\n');
-        cin >> amount;
-    }
-    dice_array[0] = amount;
+    dice_array[0] = input_manager();
     
     cout << "Faces on dice: " << endl;
-    cin >> faces;
-    //While the input entered is not an integer, prompt the user to enter an integer.
-    while(!cin || faces <= 0) // TODO: replace other block with this code, much better
-    {
-        cout << "Please enter a valid integer higher than 0: ";
-        cin.clear();
-        cin.ignore(10000, '\n');
-        cin >> faces;
-    }
-    dice_array[1] = faces;
+    dice_array[1] = input_manager();
 
     return dice_array;
 }
