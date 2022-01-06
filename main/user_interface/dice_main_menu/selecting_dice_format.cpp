@@ -10,12 +10,14 @@
 int input_manager()
 {
     int value = 0;
+    int dice_min = 0;
+    int dice_max = 10000;
     
     cin >> value;
-    //While the input entered is not an integer, prompt the user to enter an integer.
-    while(!cin || value <= 0) // TODO: replace other block with this code, much better
+    // While the input entered is not an integer, prompt the user to enter an integer.
+    while(!cin || value <= dice_min || value > dice_max) // TODO: replace other block with this code, much better
     {
-        cout << "Please enter a valid integer higher than 0: ";
+        cout << "Please enter a valid integer higher than " << dice_min << " and less than " << dice_max << ": ";
         cin.clear();
         cin.ignore(10000, '\n');
         cin >> value;
