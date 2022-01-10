@@ -15,6 +15,8 @@
 #include "user_interface/standard_messages/opening_messages/opening_welcome_message.hpp"
 #include "mechanics/dice/dice_form.hpp"
 #include "mechanics/dice/dice_throw.hpp"
+#include "mechanics/dice_input_parser/dice_input_parser.hpp"
+
 #include "user_interface/dice_main_menu/selecting_dice_format.hpp"
 
 using namespace std;
@@ -23,11 +25,9 @@ int main(int argc, const char * argv[]) {
     // Opening message when program is initiated
     openingMessage();
     
-    Die four_die("D4", 4, 0);
-    Die six_die("D6", 6, 0);
-    Die eight_die("D8", 8, 0);
-    
-    cout << four_die << endl;
+//    Die four_die("D4", 4, 0);
+//    Die six_die("D6", 6, 0);
+//    Die eight_die("D8", 8, 0);
     
 
     
@@ -35,6 +35,7 @@ int main(int argc, const char * argv[]) {
     bool keep_throwing_dice = true;
     while (keep_throwing_dice == true)
     {
+        dice_input_collector("1d4 2d6 3d10");
             
         dice_input();
         
