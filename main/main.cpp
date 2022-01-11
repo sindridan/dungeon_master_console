@@ -35,7 +35,12 @@ int main(int argc, const char * argv[]) {
     bool keep_throwing_dice = true;
     while (keep_throwing_dice == true)
     {
-        dice_input_collector("1d4 2d6 3d10");
+        string manual_dice_input = "";
+        // need to use getline because of cin ignoring chars after first whitespace.
+        // see this: https://stackoverflow.com/questions/27205251/stdcin-skips-white-spaces/27205981
+        cout << "manual dice input first (i.e. 1d4, 2d6 etc.): "; getline(cin, manual_dice_input);
+        dice_input_collector(manual_dice_input);
+        //dice_input_collector("1d4 2d6 3d10");
             
         dice_input();
         
