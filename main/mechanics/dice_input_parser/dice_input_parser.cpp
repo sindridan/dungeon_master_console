@@ -7,11 +7,17 @@
 
 #include "dice_input_parser.hpp"
 
-vector<Die> parse_and_roll(vector<pair<int,int>> parsed_input)
+vector<Die> parse_and_roll(vector<pair<int,int>> &parsed_input)
 {
     //TODO: takes in the vector from adjacent_dice_values_parser and throws them into the dice rolles
     cout << "parse_and_roll: " << endl;
-
+    for (auto it = begin (parsed_input); it != end (parsed_input); ++it)
+    {
+        cout << "start dice: " << endl;
+        start_dice(it->first, it->second);
+        //cout << "first: " << it->first << " second: " << it->second << endl;
+    }
+    
     return {};
 }
 
@@ -54,7 +60,7 @@ void dice_input_collector(string dice_input)
     
     char delimeter = ' ';
     vector<string> parsed_input;
-
+    vector<pair<int,int>> dice_set_parsed;
     stringstream sstream(dice_input);
     string word;
     while (getline(sstream, word, delimeter))
@@ -62,11 +68,7 @@ void dice_input_collector(string dice_input)
         parsed_input.push_back(word);
     }
     cout << "adjacent_dice_values_parser: ";
-    adjacent_dice_values_parser(parsed_input);
-    parse_and_roll(parsed_input);
-//    std::cout << "parsed input size: " << parsed_input.size() << std::endl;
-//    for(int i = 0; i < parsed_input.size(); i++)
-//    {
-//        cout << i <<":"<< parsed_input[i];
-//    }
+    dice_set_parsed = adjacent_dice_values_parser(parsed_input);
+    parse_and_roll(dice_set_parsed);
+
 }
