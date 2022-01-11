@@ -7,33 +7,22 @@
 
 #include "dice_input_parser.hpp"
 
-vector<Die> parse_and_roll(vector<string> parsed_input)
+vector<Die> parse_and_roll(vector<pair<int,int>> parsed_input)
 {
-    // TODO: need to iterate each vector item and reparse to gather adjacent integers between the 'd' delimeter.
-    // Then do roll stuff
-    /*
-     HOWTO:
-     First you take each part of the iterator and parse it, then place the two adjacent values
-     into a key/value map where key is amount and value is faces.
-     Then we insert each map instance into a vector<map> and send it off into the dice_throw (dice thrower).
-     */
-    
-    // 1. create a map:
-    map<int,int> dice_mapped;
+    //TODO: takes in the vector from adjacent_dice_values_parser and throws them into the dice rolles
     cout << "parse_and_roll: " << endl;
-    for (auto it = begin (parsed_input); it != end (parsed_input); ++it) {
-        // cout << dice_mapped.insert() << endl;
-        
-    }
+
     return {};
 }
 
-pair<int,int> adjacent_dice_values_parser(vector<string> parsed_dice)
+vector<pair<int,int>> adjacent_dice_values_parser(vector<string> parsed_dice)
 {
-    pair<int,int> mapped_dice; // pair<amount_of_dice,faces_of_dice> needs to be encapsulated below for dynamic insert into a vector of pairs. TODO: Change from map to pair in function!
+    // pair<amount_of_dice,faces_of_dice> needs to be encapsulated below for dynamic insert into a vector of pairs. TODO: Change from map to pair in function!
+    vector<pair<int,int>> dice_ready_to_roll;
     char delimiter = 'd';
     for (auto it = begin (parsed_dice); it != end (parsed_dice); ++it)
     {
+        pair<int,int> paired_dice;
         stringstream sstream(*it);
         string word;
         
@@ -42,18 +31,18 @@ pair<int,int> adjacent_dice_values_parser(vector<string> parsed_dice)
         
         while(getline(sstream,word,delimiter))
         {
-            cout << *it << " amount and faces: " << word << endl;
+            //cout << *it << " amount and faces: " << word << endl;
             amount_and_faces.push_back(word);
             
         }
         int amount = stoi(amount_and_faces.front());
         int faces = stoi(amount_and_faces.back());
-        mapped_dice.first = amount;
-        mapped_dice.second = faces;
+        paired_dice.first = amount;
+        paired_dice.second = faces;
         //cout << "Mapped dice amount: " << mapped_dice.first << ", faces: " << mapped_dice.second << endl;
-              
+        dice_ready_to_roll.push_back(paired_dice);
     }
-    return {};
+    return dice_ready_to_roll;
 }
 
 void dice_input_collector(string dice_input)
