@@ -35,16 +35,24 @@ int main(int argc, const char * argv[]) {
     bool keep_throwing_dice = true;
     while (keep_throwing_dice == true)
     {
-        string manual_dice_input = "";
-        // need to use getline because of cin ignoring chars after first whitespace.
-        // see this: https://stackoverflow.com/questions/27205251/stdcin-skips-white-spaces/27205981
-        cout << "manual dice input first (i.e. 1d4, 2d6 etc.): "; getline(cin, manual_dice_input);
-        dice_input_collector(manual_dice_input);
-        //dice_input_collector("1d4 2d6 3d10");
-            
-        dice_input();
+        string dice_user_input = "";
+        // TODO: menu for choosing how to throw dice
+        cout << "Dice throwing menu: " << endl;
+        cout << "[0] for manual throwing" << endl;
+        cout << "[1] for dice assistance" << endl;
+        cout << "User input: "; getline(cin, dice_user_input); // problem here, skips getline again
         
-
+        if(dice_user_input == "0")
+        {
+            string manual_dice_input = "";
+            cout << "MDI (ex. 1d4 4d6): "; getline(cin, manual_dice_input);
+            dice_input_collector(manual_dice_input);
+        }
+        else if (dice_user_input == "1")
+        {
+            dice_input();
+        } else { break; } // TODO: better workaround for wrong input by user
+        
         bool valid_cont_interaction = false;
         while(!valid_cont_interaction)
         {
@@ -59,13 +67,15 @@ int main(int argc, const char * argv[]) {
             else if (cont_interaction == "Y" || cont_interaction == "y")
             {
                 valid_cont_interaction = true;
-                cout << "More dice, yay!" << endl;
+                // https://stackoverflow.com/questions/6486289/how-can-i-clear-console check out for various OS terminal clears
+                printf("\033c"); // Clear the console
             }
             else {
                 cout << cont_interaction << " is not valid, only Y/N" << endl;
                 
             }
         }
+        cin.ignore(); // https://stackoverflow.com/questions/25074624/why-is-stdgetline-skipped
     }
     
     
