@@ -22,7 +22,7 @@
 
 using namespace std;
     vector<pair<int,int>> adjacent_dice_values_parser(vector<string> parsed_dice);
-    vector<Die> parse_and_roll(vector<string> parsed_input);
+    vector<vector<Die>> parse_and_roll(vector<string> parsed_input);
     void dice_input_collector(string dice_input); // TODO: will be vector<Die> return function
 
 

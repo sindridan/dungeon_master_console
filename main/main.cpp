@@ -25,12 +25,7 @@ int main(int argc, const char * argv[]) {
     // Opening message when program is initiated
     openingMessage();
     
-//    Die four_die("D4", 4, 0);
-//    Die six_die("D6", 6, 0);
-//    Die eight_die("D8", 8, 0);
-    
 
-    
     // init dice vars
     bool keep_throwing_dice = true;
     while (keep_throwing_dice == true)
@@ -75,6 +70,7 @@ int main(int argc, const char * argv[]) {
                 
             }
         }
+        // TODO: (Works though) Need to clean the cin buffer? Atleast needed when re-entering the while loop. Might need fixing later on
         cin.ignore(); // https://stackoverflow.com/questions/25074624/why-is-stdgetline-skipped
     }
     

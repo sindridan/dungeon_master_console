@@ -7,18 +7,22 @@
 
 #include "dice_input_parser.hpp"
 
-vector<Die> parse_and_roll(vector<pair<int,int>> &parsed_input)
+vector<vector<Die>> parse_and_roll(vector<pair<int,int>> &parsed_input)
 {
-    //TODO: takes in the vector from adjacent_dice_values_parser and throws them into the dice rolles
-    cout << "parse_and_roll: " << endl;
+    //TODO: return the dice back to dice_input_collector and get total results for all dice and individual dice sets
+    //Create vector of <die>, start dice for each dice set and insert into vector, then return said vector
+
+    vector<vector<Die>> dice_collection; // Returns the collection of dices thrown
     for (auto it = begin (parsed_input); it != end (parsed_input); ++it)
     {
-        cout << "start dice: " << endl;
-        start_dice(it->first, it->second);
-        //cout << "first: " << it->first << " second: " << it->second << endl;
+        vector<Die> tmp_dice_variation;
+        tmp_dice_variation = start_dice(it->first, it->second);
+        cout << "Total results from " << it->first << "d" << it->second << ": " << dice_result(tmp_dice_variation) << endl;
+        dice_collection.push_back(tmp_dice_variation);
+        tmp_dice_variation.clear();
     }
-    
-    return {};
+    cout << "Total of " << dice_collection.size() << " dice variations thrown" << endl;
+    return dice_collection;
 }
 
 vector<pair<int,int>> adjacent_dice_values_parser(vector<string> parsed_dice)
@@ -67,8 +71,6 @@ void dice_input_collector(string dice_input)
     {
         parsed_input.push_back(word);
     }
-    cout << "adjacent_dice_values_parser: ";
     dice_set_parsed = adjacent_dice_values_parser(parsed_input);
     parse_and_roll(dice_set_parsed);
-
 }

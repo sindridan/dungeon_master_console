@@ -14,7 +14,6 @@ vector<Die> start_dice(int dice_amount, int faces)
 
     
     vector<Die> dices; //init a new dice set, this only takes in fixed face, no variety of faces yet
-    
     for(int i = 0; i < dice_amount; i++)
         {
             int random_dice_digit = 0;
