@@ -17,6 +17,7 @@ vector<vector<Die>> parse_and_roll(vector<pair<int,int>> &parsed_input)
     {
         vector<Die> tmp_dice_variation;
         tmp_dice_variation = start_dice(it->first, it->second);
+        // TODO: set below cout as a return value in a different function
         cout << "Total results from " << it->first << "d" << it->second << ": " << dice_result(tmp_dice_variation) << endl;
         dice_collection.push_back(tmp_dice_variation);
         tmp_dice_variation.clear();

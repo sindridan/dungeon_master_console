@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		21345D1B278763FB005E1BC3 /* dice_input_parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21345D19278763FB005E1BC3 /* dice_input_parser.cpp */; };
 		2168E6012760EC4500D89251 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2168E6002760EC4500D89251 /* main.cpp */; };
+		218D226127927A97002E1025 /* characer_sheet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 218D225F27927A97002E1025 /* characer_sheet.cpp */; };
 		21D1AFE42768BD9600164D72 /* opening_welcome_message.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21D1AFE22768BD9600164D72 /* opening_welcome_message.cpp */; };
 		21D1AFE72768E5A200164D72 /* dice_calculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21D1AFE52768E5A200164D72 /* dice_calculator.cpp */; };
 		21D1AFEB276900A000164D72 /* dice_form.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21D1AFE9276900A000164D72 /* dice_form.cpp */; };
@@ -33,6 +34,8 @@
 		21345D1A278763FB005E1BC3 /* dice_input_parser.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = dice_input_parser.hpp; sourceTree = "<group>"; };
 		2168E5FD2760EC4500D89251 /* dungeon_master_console */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = dungeon_master_console; sourceTree = BUILT_PRODUCTS_DIR; };
 		2168E6002760EC4500D89251 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		218D225F27927A97002E1025 /* characer_sheet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = characer_sheet.cpp; sourceTree = "<group>"; };
+		218D226027927A97002E1025 /* characer_sheet.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = characer_sheet.hpp; sourceTree = "<group>"; };
 		21D1AFE22768BD9600164D72 /* opening_welcome_message.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = opening_welcome_message.cpp; sourceTree = "<group>"; };
 		21D1AFE32768BD9600164D72 /* opening_welcome_message.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = opening_welcome_message.hpp; sourceTree = "<group>"; };
 		21D1AFE52768E5A200164D72 /* dice_calculator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = dice_calculator.cpp; sourceTree = "<group>"; };
@@ -83,6 +86,15 @@
 			path = main;
 			sourceTree = "<group>";
 		};
+		218D225E27927A81002E1025 /* playable_character */ = {
+			isa = PBXGroup;
+			children = (
+				218D225F27927A97002E1025 /* characer_sheet.cpp */,
+				218D226027927A97002E1025 /* characer_sheet.hpp */,
+			);
+			path = playable_character;
+			sourceTree = "<group>";
+		};
 		21D1AFD32768159900164D72 /* mechanics */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +117,7 @@
 		21D1AFD5276815AB00164D72 /* data_layer */ = {
 			isa = PBXGroup;
 			children = (
+				218D225E27927A81002E1025 /* playable_character */,
 				21D1AFDB27683B2200164D72 /* dice_throws */,
 			);
 			path = data_layer;
@@ -232,6 +245,7 @@
 				21D1AFEE27694FDD00164D72 /* dice_throw.cpp in Sources */,
 				21D1AFF12776287300164D72 /* selecting_dice_format.cpp in Sources */,
 				21345D1B278763FB005E1BC3 /* dice_input_parser.cpp in Sources */,
+				218D226127927A97002E1025 /* characer_sheet.cpp in Sources */,
 				21D1AFE72768E5A200164D72 /* dice_calculator.cpp in Sources */,
 				21D1AFEB276900A000164D72 /* dice_form.cpp in Sources */,
 				21D1AFE42768BD9600164D72 /* opening_welcome_message.cpp in Sources */,
